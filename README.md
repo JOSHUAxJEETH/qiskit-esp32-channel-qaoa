@@ -154,4 +154,4 @@ pip install -r requirements.txt
 - Open-source libraries: Qiskit, Qiskit Aer, NetworkX, SciPy, Matplotlib, NumPy.
 - Farhi, Goldstone and Gutmann (2014), "A Quantum Approximate Optimization Algorithm".
 - Qiskit Fall Fest 2026, IIIT Kottayam, for the hackathon template and guides.
-- 
+  
