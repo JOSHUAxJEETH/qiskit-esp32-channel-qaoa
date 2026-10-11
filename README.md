@@ -24,7 +24,7 @@ IIIT Kottayam Quantum Hackathon (24-Hour Sprint)
 
 ## 1. Project Overview & Motivation
 
-- **Summary (3–4 sentences):**
+- **Summary :**
   We scanned the real Wi-Fi environment of a hostel building with a Raspberry Pi 5 and turned the 6 strongest 2.4 GHz access points into a weighted interference graph. Splitting these access points across two channels so that same-channel interference is minimised is the Max-Cut problem, which we solve with QAOA in Qiskit. We add a load-balancing constraint (3 access points per channel) through a penalty term, and compare QAOA against brute force, a greedy heuristic and random assignment. We also study how QAOA depth, penalty strength and hardware noise affect solution quality.
 
 - **Why this problem / game?**
