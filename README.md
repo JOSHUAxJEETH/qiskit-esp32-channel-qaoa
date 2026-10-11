@@ -82,8 +82,6 @@ for k in range(p):
 
 ### Installation & Execution Instructions
 
-> 💡 **Environment Recommendation:** To avoid package conflicts, we strongly suggest using a fresh Python virtual environment or Google Colab.
-
 ```bash
 python -m venv venv
 source venv/bin/activate   # On Windows: venv\Scripts\activate
