@@ -19,9 +19,6 @@ IIIT Kottayam Quantum Hackathon (24-Hour Sprint)
 | Name | Email | GitHub Username |
 |------|-------|-----------------|
 | Joshua Praghajeeth A.P | apj.praghajeeth@gmail.com | @JOSHUAxJEETH |
-| N/A (solo) | N/A | N/A |
-| N/A (solo) | N/A | N/A |
-| N/A (solo) | N/A | N/A |
 
 ---
 
@@ -157,4 +154,4 @@ pip install -r requirements.txt
 - Open-source libraries: Qiskit, Qiskit Aer, NetworkX, SciPy, Matplotlib, NumPy.
 - Farhi, Goldstone and Gutmann (2014), "A Quantum Approximate Optimization Algorithm".
 - Qiskit Fall Fest 2026, IIIT Kottayam, for the hackathon template and guides.
-- Solo project by Joshua Praghajeeth A.P.; all code was written during the hackathon window.
+- 
