@@ -109,8 +109,10 @@ pip install -r requirements.txt
 
 - **Key Screenshots / Terminal Output:**
 
-<img width="1120" height="483" alt="graph" src="https://github.com/user-attachments/assets/75e10e83-5bb4-4831-8eaf-ed1da0e52c96" />
-<img width="1201" height="481" alt="graph 2" src="https://github.com/user-attachments/assets/806dd40a-38f8-46ff-9640-b1bcb9a53a10" />
+<img width="1120" height="483" alt="graph" src="https://github.com/user-attachments/assets/75e10e83-5bb4-4831-8eaf-ed1da0e52c96" /> 
+
+<img width="1201" height="481" alt="graph 2" src="https://github.com/user-attachments/assets/806dd40a-38f8-46ff-9640-b1bcb9a53a10" /> 
+
 <img width="709" height="491" alt="graph3" src="https://github.com/user-attachments/assets/01f45f4f-2224-4708-a468-a59400e16abb" />
 
 ---
