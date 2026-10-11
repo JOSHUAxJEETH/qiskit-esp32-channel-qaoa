@@ -77,7 +77,7 @@ for k in range(p):
 ├── src/                    # Source code scripts (all code is in the notebook)
 ├── notebooks/              # Jupyter notebooks containing experiments
 │   └── solution.ipynb      # Main runnable notebook with outputs
-└── references/             # Hackathon reference guides (Track 1 & Track 2)
+└── references/             # Hackathon reference guides (Track 2)
 ```
 
 ### Installation & Execution Instructions
