@@ -11,8 +11,8 @@ IIIT Kottayam Quantum Hackathon (24-Hour Sprint)
 - **Project Title:** QAOA Wi-Fi Channel Assignment from Real Raspberry Pi Scan Data
 - **Team Name:** Joshua
 - **Track 2:** Open-Domain Optimization & Real-World Solvers
-- **Video Presentation Link:** PASTE_YOUR_YOUTUBE_UNLISTED_LINK_HERE
-- **Live Demo Timestamp in Video:** MM:SS
+- **Video Presentation Link:** https://youtu.be/7w04H42iLhs
+- **Live Demo Timestamp in Video:** 05:16
 
 ## Team Members 
 
