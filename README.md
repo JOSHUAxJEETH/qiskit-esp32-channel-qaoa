@@ -14,7 +14,7 @@ IIIT Kottayam Quantum Hackathon (24-Hour Sprint)
 - **Video Presentation Link:** PASTE_YOUR_YOUTUBE_UNLISTED_LINK_HERE
 - **Live Demo Timestamp in Video:** MM:SS
 
-## Team Members (Max 4 members)
+## Team Members 
 
 | Name | Email | GitHub Username |
 |------|-------|-----------------|
@@ -105,7 +105,7 @@ pip install -r requirements.txt
    ```bash
    jupyter notebook notebooks/solution.ipynb
    ```
-   (Or upload `notebooks/solution.ipynb` to Google Colab and choose Runtime → Run all. The first cell installs the packages.)
+   
 
 ---
 
