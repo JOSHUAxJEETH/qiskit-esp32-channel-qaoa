@@ -1,26 +1,13 @@
 # Qiskit Fall Fest 2026 — Project Submission Template
 **IIIT Kottayam Quantum Hackathon (24-Hour Sprint)**
 
-> ⚠️ **CRITICAL INSTRUCTIONS FOR PARTICIPANTS:**
-> 1. **Do NOT rename or delete the section headings** below. The automated AI evaluation and filtering system relies on this exact Markdown structure to parse and grade your project.
-> 2. Replace all placeholder text enclosed in `[brackets]` with your project's details.
-> 3. **Commit History Audit:** All project commits must be timestamped strictly within the 24-hour hackathon window (between **October 10, 2026 at 7:05 PM** and **October 11, 2026 at 7:05 PM**). Commits observed outside this window will result in **immediate disqualification**.
-> 4. Ensure all Jupyter Notebooks have their cells **run and outputs displayed** before pushing.
-> 5. Starter resources and reference guides are located in the [`references/`](./references/) folder.
-> 6. **Tech Stack Flexibility:** You are free to use any external frameworks/technologies (e.g., Streamlit, React, Pygame, FastAPI, NetworkX) for your frontend, app logic, or classical baselines. However, **Qiskit MUST power the quantum core** of your project.
-> 7. **Full Event Guide & Rules:** For full schedule details, track inspirations, submission steps, and grading focus areas, refer to [`HACKATHON_GUIDE.md`](./HACKATHON_GUIDE.md).
-
-*(You may delete the instructions box above when preparing your final repository submission)*
-
----
-
 # Project Title
 
 ## Project Metadata
 
-* **Project Title:** `[Your Project Title]`
-* **Team Name:** `[Your Team Name]`
-* **Chosen Track:** `[Track 1: Quantum Games & Interactive Puzzles OR Track 2: Open-Domain Optimization & Real-World Solvers]`
+* **Project Title:** `[QAOA Channel Assignment for ESP32 Sensor Nodes]`
+* **Team Name:** `[Joshua]`
+* **Chosen Track:** `[Track 2: Open-Domain Optimization & Real-World Solvers]`
 * **Video Presentation Link:** `[Insert YouTube Unlisted / Google Drive / Loom URL here]`
   *(⚠️ Crucial: Ensure link access is set to "Anyone with the link can view" on Google Drive or "Unlisted / Public" on YouTube. Locked/inaccessible links cannot be scored!)*
 * **Live Demo Timestamp in Video:** `[MM:SS]` *(e.g., "Demo starts at 03:45")*
@@ -28,36 +15,34 @@
 ### Team Members (Max 4 members)
 | Name | Email | GitHub Username |
 | :--- | :--- | :--- |
-| `[Member 1 Name]` | `[Email]` | `[@username]` |
-| `[Member 2 Name]` | `[Email]` | `[@username]` |
-| `[Member 3 Name]` | `[Email]` | `[@username]` |
-| `[Member 4 Name]` | `[Email]` | `[@username]` |
+| `[Joshua Praghajeeth A.P]` | `[apj.praghajeeth@gmail.com]` | `[JOSHUAxJEETH]` |
+
 
 ---
 
 ## 1. Project Overview & Motivation
 
-* **Summary (3–4 sentences):**  
-  `[Provide a concise executive summary of what you built. What is the game or optimization dilemma?]`
+* **Summary:**  
+  `[We model a network of 6 ESP32 IoT sensor nodes as a weighted graph, where edge weights represent interference between nearby nodes. Splitting the nodes across two Wi-Fi channels so that interference between nodes on the same channel is minimised is the Max-Cut problem. We solve it with QAOA in Qiskit and compare it with brute force, a greedy heuristic and random assignment.]`
 
 * **Why this problem / game?**  
-  `[Explain why you chose this specific topic. Why is it engaging, practically relevant, or pedagogically meaningful?]`
+  `[Channel assignment is a real wireless-network problem, and it maps directly onto Max-Cut, which is a standard QAOA benchmark. It lets us test how quantum optimisation behaves on a practical IoT scenario.]`
 
 ---
 
 ## 2. Quantum Architecture & Mechanics
 
 * **Core Quantum Principles Used:**  
-  `[Specify the exact quantum principles at play: e.g., Superposition (H gate), Entanglement (Bell states / CNOT), Measurement Collapse, Interference, or QAOA Cost Hamiltonian.]`
+  `[Superposition (H gates on all qubits), entanglement through RZZ gates, interference through the QAOA cost and mixer layers, and measurement of the final state. The cost Hamiltonian is a sum of weighted ZZ terms.]`
 
 * **How the Quantum Circuit is Integrated:**  
-  `[Explain how quantum states map to your game board, strategy, or optimization problem. How does your Qiskit circuit interact with player input or the optimization loop?]`
+  `[Each qubit is a node, and its measured bit is that node’s channel. The cost layer applies an RZZ rotation scaled by each edge’s weight. The mixer layer applies RX rotations. A classical COBYLA optimiser tunes the angles to minimise the energy, which is the expected cut.]`
 
 * **Circuit Details:**  
-  * **Number of Qubits:** `[e.g., 4 qubits]`
-  * **Key Gates Used:** `[e.g., H, CX, RZ, Measurement]`
-  * **Primitives Used:** `[e.g., StatevectorSampler, StatevectorEstimator, or Qiskit Aer simulator]`
-  * **Other Technologies Used:** `[e.g., Streamlit for UI, NetworkX for graph generation, Pygame, etc. (Note: Qiskit must power the quantum logic)]`
+  * **Number of Qubits:** `[6]`
+  * **Key Gates Used:** `[H, RZZ, RX, Measurement]`
+  * **Primitives Used:** `[Qiskit Statevector for exact expectation values and AerSimulator for noisy sampling.]`
+  * **Other Technologies Used:** `[NetworkX for the graph, SciPy for optimisation, Matplotlib for plots.]`
 
 ```python
 # Optional: Paste a representative snippet of your core Qiskit circuit code here
@@ -78,69 +63,37 @@
 └── references/             # Hackathon reference guides (Track 1 & Track 2)
 ```
 
-### Installation & Execution Instructions
-
-> 💡 **Environment Recommendation:** To avoid package conflicts, we strongly suggest using a fresh Python virtual environment or Google Colab:
-> ```bash
-> python -m venv venv
-> source venv/bin/activate    # On Windows: venv\Scripts\activate
-> pip install -r requirements.txt
-> ```
-
-1. **Clone the repository:**
-   ```bash
-   git clone [your-repo-url]
-   cd [your-repo-folder]
-   ```
-2. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. **Run the project / demo:**
-   ```bash
-   # If running a script or CLI game:
-   python src/main.py
-
-   # If running a Streamlit web app:
-   streamlit run src/app.py
-
-   # Or open the Jupyter Notebook:
-   jupyter notebook notebooks/solution.ipynb
-   ```
-
----
-
 ## 4. Implementation Walkthrough & Live Demo
 
 * **Walkthrough of Gameplay / Optimization Pipeline:**  
-  `[Describe the user experience or algorithmic workflow step-by-step. What inputs does the user provide, what happens inside the quantum circuit, and what output is produced?]`
-
+  `[Build the graph, then run QAOA with depth p, optimise the parameters over several random restarts, take the most likely bitstring as the channel assignment, and compare its cut value with the classical baselines.]`
+  
 * **Key Screenshots / Terminal Output:**  
-  `[Paste sample terminal output, game screenshots, or optimization convergence plots here to demonstrate that the project runs.]`
+  `[<img width="1120" height="483" alt="graph" src="https://github.com/user-attachments/assets/75e10e83-5bb4-4831-8eaf-ed1da0e52c96" />
+  <img width="1201" height="481" alt="graph 2" src="https://github.com/user-attachments/assets/806dd40a-38f8-46ff-9640-b1bcb9a53a10" />
+   <img width="709" height="491" alt="graph3" src="https://github.com/user-attachments/assets/01f45f4f-2224-4708-a468-a59400e16abb" />]`
 
 ---
 
 ## 5. Classical vs. Quantum Comparison
 
 * **Classical Baseline / Counterpart:**  
-  `[What classical baseline did you compare against? (e.g., a classical player, a random guesser, a brute-force classical solver, or a naive greedy heuristic)]`
+  `[Brute force (optimal, 17), greedy heuristic (17), random assignment (average 10.6).]`
 
 * **Comparative Analysis:**  
-  `[How did the quantum approach compare to the classical baseline? For Track 1: Did quantum strategy give an unfair advantage or unique gameplay behavior? For Track 2: What was the approximation ratio (C_quantum / C_optimal) and feasibility yield?]`
-
+  `[The greedy heuristic matched the optimum on this small graph, so QAOA offers no advantage here. QAOA reached expected cut ratios of 0.81 to 0.83 (random is 0.62). The optimal assignments were sampled with probability about 0.1 for p=1 and p=3, compared with about 0.03 for random sampling.]`
+  
 ---
 
 ## 6. Performance, Results & Limitations
 
 * **Key Results & Observations:**  
-  `[Summarize the main results from your experiments, simulations, or gameplay tests.]`
+  `[p=1 ratio 0.828, p=2 0.810, p=3 0.829. Noise-free p=3 beats p=1 in the noise run, but the gap closes as gate error approaches 2%.]`
 
 * **Critical Reflection on Limitations:**  
-  `[Be honest and rigorous: What happens if this is scaled to larger qubit counts? How would physical quantum noise, gate errors, and decoherence affect your solution on real NISQ hardware? Acknowledging limitations demonstrates true scientific understanding!]`
+  `[The graph has only 6 nodes, and the weights are illustrative, not measured RSSI values. The p=2 dip shows COBYLA can get stuck in local minima. Deeper circuits are more sensitive to noise, so on real NISQ hardware the benefit of larger p would be limited. Larger graphs would need many more qubits and gates, and any real advantage would have to be shown at scale.]`
 
 ---
 
 ## 7. References & Acknowledgments
-
-* `[Cite any open-source libraries, GitHub repositories, or research papers you referenced during the hackathon.]`
-* `[Acknowledge team contributions and tools used.]`
+Qiskit, NetworkX, SciPy, Matplotlib, Qiskit Fall Fest 2026 (IIIT Kottayam), Farhi et al. (2014) QAOA paper.
